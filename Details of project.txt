@@ -1,0 +1,19 @@
+MICROSERVICE ONLINE SHOPPING:
+Eureka
+Config server
+Github
+Zipkin
+logstash
+kibana
+Elasticssearch
+Vault
+Kafka
+MongoDB
+Rabbit MQ
+===========================
+PROJECTS:
+Product Service
+Order Service
+Inventry Service
+Notification Service
+API Gateway--> Auth Server
