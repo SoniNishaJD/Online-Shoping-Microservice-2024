@@ -1,10 +1,30 @@
 package com.nishasoni.Productservice.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.nishasoni.Productservice.dto.ProductRequest;
+import com.nishasoni.Productservice.dto.ProductResponse;
+import com.nishasoni.Productservice.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
+@RequiredArgsConstructor
 public class ProductController {
+
+    private final ProductService productService;
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createProduct(@RequestBody ProductRequest productRequest){
+        productService.createProduct(productRequest);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductResponse> getAllProducts(){
+       return productService.getAllProducts();
+    }
 
 }
